@@ -1,12 +1,10 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.qd.clock.MainActivity" >
-
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never"/>
-
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/github" 
+        android:icon="@drawable/ic_action_github" 
+        android:showAsAction="always" 
+        android:title="@string/github_label" 
+        android:titleCondensed="@string/github" 
+        android:visible="true"></item>
+   
 </menu>
