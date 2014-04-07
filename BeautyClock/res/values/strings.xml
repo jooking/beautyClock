@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">美女闹钟</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+ 	<string name="changing_fragments">Changing Fragments</string>
+ 	
+ 	 <string name="github">GitHub</string>
+    <string name="github_label">SlidingMenu on GitHub</string>
+</resources>
