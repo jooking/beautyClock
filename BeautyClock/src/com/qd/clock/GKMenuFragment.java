@@ -31,7 +31,8 @@ public class GKMenuFragment extends ListFragment {
 		Fragment newContent = null;
 		switch (position) {
 		case 0:
-			newContent = new GKContentFragment(R.color.red);
+//			newContent = new MediaPlayFragment();
+			newContent = new GKVideoFragment();
 			break;
 		case 1:
 			newContent = new GKContentFragment(R.color.green);
@@ -61,10 +62,7 @@ public class GKMenuFragment extends ListFragment {
 			MainActivity fca = (MainActivity) getActivity();
 			fca.switchContent(fragment, position);
 		} 
-		/*else if (getActivity() instanceof ResponsiveUIActivity) {
-			ResponsiveUIActivity ra = (ResponsiveUIActivity) getActivity();
-			ra.switchContent(fragment);
-		}*/
+		
 	}
 
 

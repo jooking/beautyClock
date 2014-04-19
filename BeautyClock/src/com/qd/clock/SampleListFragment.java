@@ -1,6 +1,7 @@
 package com.qd.clock;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
@@ -38,6 +39,9 @@ public class SampleListFragment extends ListFragment {
 
 		public SampleAdapter(Context context) {
 			super(context, 0);
+			
+			
+			
 		}
 
 		public View getView(int position, View convertView, ViewGroup parent) {

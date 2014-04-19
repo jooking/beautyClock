@@ -16,7 +16,6 @@ public class BaseActivity extends SlidingFragmentActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
 		setTitle(mTitleRes);
 		
 		// set the Behind View
@@ -31,6 +30,7 @@ public class BaseActivity extends SlidingFragmentActivity {
 //		}
 		
 		// customize the SlidingMenu
+		
 		SlidingMenu sm = getSlidingMenu();
 		sm.setShadowWidthRes(R.dimen.shadow_width);
 		sm.setShadowDrawable(R.drawable.shadow);

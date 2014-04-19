@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity {
 		// 版本更新自动敬爱呢
 		UmengUpdateAgent.setUpdateOnlyWifi(false);
 	    UmengUpdateAgent.update(this);
-
+	    
 	    // oline config params
 		String onlineParams= MobclickAgent.getConfigParams(getApplicationContext(), "hello_test");//the demo param's key is 'abc'
 		System.out.println("======" +onlineParams);
@@ -37,7 +37,7 @@ public class MainActivity extends BaseActivity {
 		if (savedInstanceState != null)
 			mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
 		if (mContent == null)
-			mContent = new GKContentFragment(R.color.red);	
+			mContent = new GKContentFragment(R.color.blue);	
 		
 		// set the Above View
 		setContentView(R.layout.content_frame);
