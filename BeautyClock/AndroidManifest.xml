@@ -47,7 +47,7 @@
             </intent-filter>
         </activity>
             <activity
-        	android:name="com.qd.clock..AlarmActivity"
+        	android:name="com.qd.clock.AlarmActivity"
         	android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:label="闹铃" 
             android:theme="@android:style/Theme.Wallpaper.NoTitleBar">

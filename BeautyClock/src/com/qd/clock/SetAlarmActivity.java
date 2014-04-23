@@ -75,8 +75,7 @@ public class SetAlarmActivity extends Activity{
         if (calendar.before(Calendar.getInstance())) {
         	calendar.add(Calendar.DAY_OF_MONTH, 1);
 		}
-        while(!getWeekAlarmTime().contains(calendar.get(Calendar.DAY_OF_WEEK)-1)){
-        	
+        while(!getWeekAlarmTime().contains(calendar.get(Calendar.DAY_OF_WEEK)-1)){        	
         	calendar.add(Calendar.DAY_OF_MONTH, 1);			
 		}
          //=========================
