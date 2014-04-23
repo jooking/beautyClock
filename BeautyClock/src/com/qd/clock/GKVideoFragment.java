@@ -6,6 +6,7 @@ import com.qd.clock.utils.CommonHelp;
 
 import android.R.raw;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -34,6 +35,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
+import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.RelativeLayout;
 import android.widget.VideoView;
@@ -42,7 +44,7 @@ import android.widget.VideoView;
 public class GKVideoFragment extends Fragment implements OnTouchListener,OnCompletionListener {
 	private static final String TAG = "tag";
 	private VideoView mVideoView;
-
+private Button set;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -57,6 +59,14 @@ public class GKVideoFragment extends Fragment implements OnTouchListener,OnCompl
 		Log.v("Create:::", "onCreateView called");
 		View rootView = inflater.inflate(R.layout.video_fragment, container,
 				false);
+		set=(Button) rootView.findViewById(R.id.button_set_alarm);
+		set.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				startActivity(new Intent(getActivity(),SetAlarmActivity.class));			
+			}
+		});
 		mVideoView = (VideoView) rootView.findViewById(R.id.shouye_video_view);
 		mVideoView.setOnTouchListener(this);
 		mVideoView.setOnCompletionListener(this);
@@ -66,13 +76,12 @@ public class GKVideoFragment extends Fragment implements OnTouchListener,OnCompl
 		mVideoView.setMediaController(mc);
 
 		String path = "android.resource://com.qd.clock/" + R.raw.video1;
-		// String path = Environment.getExternalStorageDirectory().getPath()
-		// + "/Video1.mp4";
+
 
 		Bitmap thumbAsBitmap = ThumbnailUtils.createVideoThumbnail(path,
 				MediaStore.Images.Thumbnails.FULL_SCREEN_KIND);
 		Bitmap image = this.getVideoThumbnailWithId(R.raw.video1);
-		// mVideoView.setBackground(new BitmapDrawable(image));
+		
 		
 		mVideoView.setBackgroundResource(R.drawable.img_48);
 		
@@ -91,6 +100,7 @@ public class GKVideoFragment extends Fragment implements OnTouchListener,OnCompl
 				mVideoView.setVideoPath(CommonHelp
 						.pathFromRawResourceId(R.raw.video1));
 				mVideoView.start();
+				set.setVisibility(View.GONE);
 			}
 			break;
 		default:
@@ -105,14 +115,22 @@ public class GKVideoFragment extends Fragment implements OnTouchListener,OnCompl
 		// 当MediaPlayer播放完成后触发
 //		Log.v("Play Over:::", "onComletion called");
 		mVideoView.setBackgroundResource(R.drawable.img_48);
+		set.setVisibility(View.VISIBLE);
 	}
 	
 	private Bitmap getVideoThumbnailWithId(int rsid) {
 		Bitmap imageBitmap = CommonHelp.getVideoThumbnail(
 				CommonHelp.pathFromRawResourceId(rsid), 300, 300,
-				Thumbnails.FULL_SCREEN_KIND);
-		
+				Thumbnails.FULL_SCREEN_KIND);	
 		return imageBitmap;
 	}
-
+	@Override
+	public void onDestroy() {
+		// TODO Auto-generated method stub
+		
+		if (mVideoView.isPlaying()) {
+			mVideoView.stopPlayback();
+		}
+		super.onDestroy();
+	}
 }

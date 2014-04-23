@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+   >
+
+    <TimePicker
+        android:id="@+id/timePicker1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         />
+<!-- 
+    <LinearLayout 
+        android:id="@+id/week"
+        android:layout_below="@id/timePicker1"
+         android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+	    <CheckBox
+	        android:id="@+id/checkBox1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="周一" 
+	        android:layout_weight="1"/>
+	
+	    <CheckBox
+	        android:id="@+id/checkBox2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="周二" />
+	
+	    <CheckBox
+	        android:id="@+id/checkBox3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="周三" />
+	
+	    <CheckBox
+	        android:id="@+id/checkBox4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="周四" />
+	
+	    <CheckBox
+	        android:id="@+id/checkBox5"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="周五" />
+	
+	    <CheckBox
+	        android:id="@+id/checkBox6"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="周六" />
+	
+	    <CheckBox
+	        android:id="@+id/checkBox7"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	       	
+	        android:text="周日" />
+    </LinearLayout> -->
+
+        <LinearLayout 
+        android:id="@+id/toggleButton_week"
+        android:layout_below="@id/timePicker1"
+         android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+	    
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_weight="1"
+		android:textOff="周一"
+        android:textOn="周一"      
+        android:text="周一" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_weight="1"
+ android:textOff="周二"
+        android:textOn="周二"
+        android:text="周二" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_weight="1"
+       android:textOff="周三"
+        android:textOn="周三"
+        android:text="周三" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_weight="1"
+   android:textOff="周四"
+        android:textOn="周四"
+        android:text="周四" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_weight="1"
+      android:textOff="周五"
+        android:textOn="周五"
+        android:text="周五" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_weight="1"
+android:textOff="周六"
+        android:textOn="周六"
+        android:text="周六" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_weight="1"
+       android:textOff="周日"
+        android:textOn="周日"
+        android:text="周日" />
+    </LinearLayout> 
+    
+    <Button
+        android:id="@+id/clock_ok"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       
+        style="?@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_alignParentBottom="true"
+        android:onClick="onAlarmConfirmClick"
+        android:text="确定" />
+    <Button
+        android:id="@+id/clock_cancle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       
+        style="?@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_above="@id/clock_ok"
+        android:onClick="onAlarmCancleClick"
+        android:text="取消" />
+
+	
+</RelativeLayout>
